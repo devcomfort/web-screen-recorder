@@ -5,7 +5,8 @@ ESM을 기반으로 제공됨.
 
 ## 라이브러리 목록
 
-- [WebScreenRecorder.mjs](./WebScreenRecorder.mjs): 웹 화면 녹화 기능 접근 코
+- [WebScreenRecorder.mjs](./WebScreenRecorder.mjs): 웹 화면 녹화 기능 접근 코드
+  - JSDelivr: [https://cdn.jsdelivr.net/gh/devcomfort/webJS@master/WebScreenRecorder.mjs](https://cdn.jsdelivr.net/gh/devcomfort/webJS@master/WebScreenRecorder.mjs)
 
 ## 참조
 
