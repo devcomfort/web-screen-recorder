@@ -4,13 +4,27 @@
  * 웹 페이지 녹화 기능 접근을 위한 라이브러리
  *
  * @author devcomfort
- * @link https://yong0810.tistory.com/44
+ * @link https://yong0810.tistory.com/44 웹 화면 녹화 코드
+ * @link https://developer.mozilla.org/ko/docs/Web/Media/Formats/codecs_parameter 웹 codecs 정보
  *
  * @todo 결과물 해상도 지정 기능 추가하기
  * @todo 결과물 포멧 지정 기능 추가하기
  */
 
-export default function () {
+/**
+ * @typedef {object} T_ARGS
+ * @property {number} height
+ * @property {number} width
+ * @property {string} mime
+ *
+ * @param {T_ARGS} args
+ */
+export default function (args) {
+  args.height ??= 480;
+  args.width ??= 640;
+
+  const { height, width } = args;
+
   const _elements = {
     download: document.createElement("a"),
   };
@@ -72,12 +86,13 @@ export default function () {
     return hasDesktop || hasVoice ? destination.stream.getAudioTracks() : [];
   };
 
+  /** 영상 녹화 시작 함수 */
   const startRecord = async () => {
     /** 비디오 스트림 생성 */
     _data.desktopStream = await navigator.mediaDevices.getDisplayMedia({
       video: {
-        width: 640,
-        height: 480,
+        width: width,
+        height: height,
       },
       audio: true,
     });
@@ -115,6 +130,7 @@ export default function () {
     _data.rec.start();
   };
 
+  /** 영상 녹화 종료 함수 */
   const stopRecord = () => {
     _data.rec?.stop();
 
