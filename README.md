@@ -12,3 +12,4 @@ ESM을 기반으로 제공됨.
 
 - [JSDoc 작성법](https://okayoon.tistory.com/entry/JSDoc%EB%A5%BC-%EC%82%AC%EC%9A%A9%ED%95%B4%EC%84%9C-Javasript-%EB%AC%B8%EC%84%9C%ED%99%94%ED%95%B4%EB%B3%B4%EC%9E%90)
 - [Git Tag](https://git-scm.com/book/ko/v2/Git%EC%9D%98-%EA%B8%B0%EC%B4%88-%ED%83%9C%EA%B7%B8)
+- [JSDelivr (with. Github) 사용법](https://luran.me/493)
