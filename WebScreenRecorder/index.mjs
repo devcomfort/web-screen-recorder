@@ -1,5 +1,7 @@
 // @ts-check
 
+import extHandler, { MEDIA_EXTENSION_T } from "./parser.mjs";
+
 /**
  * 웹 페이지 녹화 기능 접근을 위한 라이브러리
  *
@@ -12,50 +14,53 @@
  */
 
 /**
+ * 함수 내부 데이터 타입 지정
+ *
+ * @typedef {object} RECORDER_CACHE_T
+ * @property {Blob[]} blobs
+ * @property {Blob | undefined} blob
+ * @property {MediaRecorder | undefined} rec
+ * @property {*} stream
+ * @property {*} voiceStream
+ * @property {MediaStream | undefined} desktopStream
+ */
+
+/**
  * @typedef {object} T_ARGS
  * @property {number} height
  * @property {number} width
- * @property {string} mime
+ * @property {MEDIA_EXTENSION_T} ext
  *
  * @param {T_ARGS} args
+ *
  */
 export default function (args) {
+  /** 기본값 지정 */
   args.height ??= 480;
   args.width ??= 640;
 
   const { height, width } = args;
 
+  let { ext } = args;
+
+  const finalType = extHandler(ext).toFullText();
+
   const _elements = {
     download: document.createElement("a"),
   };
 
+  /** @type {RECORDER_CACHE_T} */
   const _data = {
-    /** @type {Blob[]} */
     blobs: [],
-    /**
-     * 데이터
-     * @type {Blob | undefined}
-     */
+    /** 데이터 */
     blob: undefined,
-    /**
-     * 스트림을 기반으로 통합하는 MediaRecorder 객체
-     * @type {MediaRecorder | undefined}
-     */
+    /** 스트림을 기반으로 통합하는 MediaRecorder 객체 */
     rec: undefined,
-    /**
-     * 통합
-     * @type {*}
-     */
+    /** 통합 */
     stream: undefined,
-    /**
-     * 오디오 스트림
-     * @type {*}
-     */
+    /** 오디오 스트림 */
     voiceStream: undefined,
-    /**
-     * 비디오 스트림
-     * @type {MediaStream | undefined}
-     */
+    /** 비디오 스트림 */
     desktopStream: undefined,
   };
 
@@ -112,12 +117,12 @@ export default function (args) {
     _data.blobs = [];
     /** MediaRecorder 객체 생성 */
     _data.rec = new MediaRecorder(_data.stream, {
-      mimeType: "video/webm; codecs=vp9,opus",
+      mimeType: finalType,
     });
     _data.rec.ondataavailable = (e) => _data.blobs.push(e.data);
     _data.rec.onstop = async () => {
       _data.blob = new Blob(_data.blobs, {
-        type: "video/webm",
+        type: extHandler(ext).toMimeType(),
       });
 
       let url = window.URL.createObjectURL(_data.blob);
