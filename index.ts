@@ -12,12 +12,10 @@
  */
 
 interface Args {
-  height: number;
-  width: number;
+  height?: number;
+  width?: number;
   /** 파일 이름 */
-  fileName: string;
-  /** 파일 확장자 */
-  ext: string;
+  fileName?: string;
 }
 
 export default function ({
