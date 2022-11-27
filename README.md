@@ -1,15 +1,45 @@
-<h1>Web Dev Code Snippets</h1>
+<h1>WebScreenRecorder</h1>
 
-웹 개발에 필요한 라이브러리 모음을 만드는 레포지토리. <br>
-ESM을 기반으로 제공됨.
+`WebScreenRecorder`는 브라우저의 화면 녹화 기능에 접근하기 위한 라이브러리입니다. <br>
+함수형으로 프로그래밍 되었습니다.
 
-## 라이브러리 목록
+아래와 같이 사용할 수 있습니다.
 
-- [WebScreenRecorder.mjs](./WebScreenRecorder.mjs): 웹 화면 녹화 기능 접근 코드
-  - JSDelivr: [https://cdn.jsdelivr.net/gh/devcomfort/webJS@master/WebScreenRecorder.mjs](https://cdn.jsdelivr.net/gh/devcomfort/webJS@master/WebScreenRecorder.mjs)
+```javascript
+import WebScreenRecorder from "./index.mjs";
 
-## 참조
+const ScreenRecorder = WebScreenRecorder({
+  height: 1920,
+  width: 1080,
+  fileName: "test",
+  ext: "webm",
+});
 
-- [JSDoc 작성법](https://okayoon.tistory.com/entry/JSDoc%EB%A5%BC-%EC%82%AC%EC%9A%A9%ED%95%B4%EC%84%9C-Javasript-%EB%AC%B8%EC%84%9C%ED%99%94%ED%95%B4%EB%B3%B4%EC%9E%90)
-- [Git Tag](https://git-scm.com/book/ko/v2/Git%EC%9D%98-%EA%B8%B0%EC%B4%88-%ED%83%9C%EA%B7%B8)
-- [JSDelivr (with. Github) 사용법](https://luran.me/493)
+/** 영상 녹화 시작 */
+await ScreenRecorder.startRecord();
+
+/** 영상 녹화 종료 */
+ScreenRecorder.stopRecord();
+```
+
+## 기능
+
+- 화면 녹화 기능
+- 세부 설정
+  - 영상 해상도 지정
+  - 영상 포멧 지정
+  - 출력 영상 파일 제목 지정 <br>
+    세부 설정 예시:
+    ```json
+    {
+      "height": 1920,
+      "width": 1080,
+      "fileName": "test",
+      "ext": "mp4"
+    }
+    ```
+
+## 확장자 목록
+
+- [x] `webm`
+- [ ] `mp4`
