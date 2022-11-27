@@ -1,6 +1,7 @@
 {
   "name": "@devcomfort/web-screen-recorder",
   "type": "commonjs",
+  "version": "0.0.1",
   "license": "MIT",
   "main": "./dist/index.js",
   "module": "./build/index.js",
