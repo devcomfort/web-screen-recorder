@@ -6,6 +6,7 @@
  * @author devcomfort
  * @link https://yong0810.tistory.com/44 웹 화면 녹화 코드
  * @link https://developer.mozilla.org/ko/docs/Web/Media/Formats/codecs_parameter 웹 codecs 정보
+ * @link https://darrengwon.tistory.com/516 상세 내용 설명
  *
  * @todo 결과물 해상도 지정 기능 추가하기
  * @todo 결과물 포멧 지정 기능 추가하기
@@ -66,10 +67,7 @@ export default function ({
   const startRecord = async () => {
     /** 비디오 스트림 생성 */
     desktopStream = await navigator.mediaDevices.getDisplayMedia({
-      video: {
-        width: width,
-        height: height,
-      },
+      video: { width, height },
       audio: true,
     });
 
@@ -85,7 +83,7 @@ export default function ({
     blobs = [];
     /** MediaRecorder 객체 생성 */
     rec = new MediaRecorder(stream, {
-      mimeType: "video/webm; codecs=vp9",
+      mimeType: `video/webm; codecs="vp9, vorbis"`,
     });
     rec.ondataavailable = (e) => blobs.push(e.data);
     rec.onstop = async () => {
@@ -95,7 +93,7 @@ export default function ({
 
       let url = window.URL.createObjectURL(blob);
 
-      download(url, `${fileName}.webm`);
+      download(url, fileName);
     };
 
     rec.start();
@@ -103,6 +101,8 @@ export default function ({
 
   /** 영상 녹화 종료 함수 */
   const stopRecord = () => {
+    console.log(rec);
+
     rec.stop();
     desktopStream?.getTracks().forEach((s) => s.stop());
     voiceStream?.getTracks().forEach((s) => s.stop());
