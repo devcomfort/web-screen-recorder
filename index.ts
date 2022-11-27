@@ -68,10 +68,7 @@ export default function ({
   const startRecord = async () => {
     /** 비디오 스트림 생성 */
     desktopStream = await navigator.mediaDevices.getDisplayMedia({
-      video: {
-        width: width,
-        height: height,
-      },
+      video: { width, height },
       audio: true,
     });
 
@@ -87,17 +84,17 @@ export default function ({
     blobs = [];
     /** MediaRecorder 객체 생성 */
     rec = new MediaRecorder(stream, {
-      mimeType: "video/webm; codecs=vp9",
+      mimeType: `video/webm; codecs="vp9, vorbis"`,
     });
     rec.ondataavailable = (e) => blobs.push(e.data);
     rec.onstop = async () => {
       blob = new Blob(blobs, {
-        type: "video/webm",
+        type: `video/webm`,
       });
 
       let url = window.URL.createObjectURL(blob);
 
-      download(url, `${fileName}.webm`);
+      download(url, fileName);
     };
 
     rec.start();
