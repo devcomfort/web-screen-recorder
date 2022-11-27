@@ -1,43 +1,37 @@
-<h1>WebScreenRecorder</h1>
+<h1>web-screen-recorder</h1>
 
-`WebScreenRecorder`는 브라우저의 화면 녹화 기능에 접근하기 위한 라이브러리입니다. <br>
-함수형으로 프로그래밍 되었습니다.
+`web-screen-recorder`는 브라우저의 화면 녹화 기능에 접근하기 위한 라이브러리입니다.
+
+## 설치
+
+```bash
+# npm
+npm i @devcomfort/web-screen-recorder
+# yarn
+yarn add @devcomfort/web-screen-recorder
+# pnpm
+pnpm i @devcomfort/web-screen-recorder
+```
+
+## 사용
 
 아래와 같이 사용할 수 있습니다.
 
 ```javascript
-import WebScreenRecorder from "./index.mjs";
+import Recorder from "@devcomfort/web-screen-recorder";
 
-const ScreenRecorder = WebScreenRecorder({
-  height: 1920,
-  width: 1080,
-  fileName: "test",
-  ext: "webm",
+const _Recorder = Recorder({
+  height: 1080,
+  width: 1920,
+  fileName: "test.webm",
 });
 
 /** 영상 녹화 시작 */
-await ScreenRecorder.startRecord();
+await Recorder.startRecord();
 
 /** 영상 녹화 종료 */
-ScreenRecorder.stopRecord();
+Recorder.stopRecord();
 ```
-
-## 기능
-
-- 화면 녹화 기능
-- 세부 설정
-  - 영상 해상도 지정
-  - 영상 포멧 지정
-  - 출력 영상 파일 제목 지정 <br>
-    세부 설정 예시:
-    ```json
-    {
-      "height": 1920,
-      "width": 1080,
-      "fileName": "test",
-      "ext": "mp4"
-    }
-    ```
 
 ## 확장자 목록
 
