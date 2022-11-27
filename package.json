@@ -6,7 +6,7 @@
   "main": "./dist/index.js",
   "module": "./build/index.js",
   "scripts": {
-    "build": "tsc"
+    "build": "tsc && alanode dist -o build"
   },
   "devDependencies": {
     "alanode": "^1.1.0",
