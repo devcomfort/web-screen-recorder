@@ -4,13 +4,12 @@
   "version": "0.0.2",
   "license": "MIT",
   "scripts": {
-    "build": "parcel build --no-source-maps"
-  },
-  "devDependencies": {
-    "alanode": "^1.1.0"
+    "build:parcel": "parcel build --no-source-maps",
+    "build": "tsc && alamode dist -o build --noSourceMaps"
   },
   "dependencies": {
     "@types/node": "^18.11.9",
+    "alamode": "^3.7.1",
     "parcel": "^2.8.0",
     "path": "^0.12.7",
     "ts-node": "^10.9.1",
