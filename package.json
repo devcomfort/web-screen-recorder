@@ -3,6 +3,8 @@
   "type": "commonjs",
   "version": "0.0.2",
   "license": "MIT",
+  "main": "./build/index.js",
+  "module": "./dist/index.js",
   "scripts": {
     "build:parcel": "parcel build --no-source-maps",
     "build": "tsc && alamode dist -o build --noSourceMaps"
