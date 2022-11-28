@@ -129,7 +129,6 @@ out
 .yarn/install-state.gz
 .pnp.*
 
-dist
 
 # test code
 test
