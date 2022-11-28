@@ -1,5 +1,3 @@
-import Recorder from "./module";
-
 /**
  * 웹 페이지 녹화 기능 접근을 위한 라이브러리
  *
