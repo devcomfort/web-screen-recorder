@@ -133,3 +133,6 @@ dist
 
 # test code
 test
+
+# pnpm-lock
+pnpm-lock.yaml
