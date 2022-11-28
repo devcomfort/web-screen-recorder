@@ -82,7 +82,7 @@ export default function ({
     blobs = [];
     /** MediaRecorder 객체 생성 */
     rec = new MediaRecorder(stream, {
-      mimeType: `video/webm; codecs="vp9, vorbis"`,
+      mimeType: `video/webm; codecs="vp9, opus"`,
     });
     rec.ondataavailable = (e) => blobs.push(e.data);
     rec.onstop = async () => {
@@ -91,8 +91,7 @@ export default function ({
       });
 
       let url = window.URL.createObjectURL(blob);
-
-      download(url, `${fileName}.webm`);
+      download(url, fileName);
     };
 
     rec.start();
