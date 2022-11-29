@@ -9,6 +9,8 @@
  * @todo 결과물 포멧 지정 기능 추가하기
  */
 
+import webmToMp4 from "webm-to-mp4";
+
 interface Args {
   height: number;
   width: number;
@@ -90,8 +92,14 @@ export default function ({
         type: `video/webm`,
       });
 
-      let url = window.URL.createObjectURL(blob);
-      download(url, fileName);
+      const t = webmToMp4(await blob.arrayBuffer());
+
+      // let url = window.URL.createObjectURL(blob);
+      // download(url, fileName);
+      let url = window.URL.createObjectURL(
+        new Blob([t], { type: "video/mp4" })
+      );
+      download(url, "video.mp4");
     };
 
     rec.start();
