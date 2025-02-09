@@ -27,3 +27,4 @@ pnpm i @devcomfort/web-screen-recorder
 ## References
 
 - [Phind Q&A for video quality](https://www.phind.com/search/cm6xo31dq00003b6nr4lkb6rm)
+- [Front End Stream Record Library | YMKO 기술 메모](https://momoci99.github.io/JsReocrdStreamLib/0)
