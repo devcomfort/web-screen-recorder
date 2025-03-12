@@ -1,5 +1,5 @@
-import { getMediaStreams } from "./src/getMediaStream";
-import { getMediaRecorder } from "./src/getMediaRecorder";
+import { getMediaStreams } from "./getMediaStream";
+import { getMediaRecorder } from "./getMediaRecorder";
 
 getMediaStreams({
 	audio: {
