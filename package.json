@@ -1,39 +1,9 @@
 {
-  "name": "@devcomfort/web-screen-recorder",
-  "type": "commonjs",
-  "version": "0.0.2",
-  "license": "MIT",
-  "main": "./build/index.js",
-  "module": "./dist/index.js",
-  "targets": {
-    "main": false,
-    "module": false
-  },
-  "scripts": {
-    "build:parcel": "parcel build --no-source-maps",
-    "build": "tsc && alamode dist -o build --noSourceMaps"
-  },
-  "dependencies": {
-    "@types/node": "^18.11.9",
-    "alamode": "^3.7.1",
-    "lodash": "^4.17.21",
-    "parcel": "^2.8.0",
-    "path": "^0.12.7",
-    "ts-node": "^10.9.1",
-    "typescript": "^4.9.3",
-    "webm-to-mp4": "^1.0.0"
-  },
-  "author": {
-    "name": "devcomfort",
-    "url": "https://github.com/devcomfort"
-  },
-  "publishConfig": {
-    "registry": "https://registry.npmjs.com",
-    "access": "public"
-  },
-  "private": false,
-  "packageManager": "pnpm@10.2.1+sha512.398035c7bd696d0ba0b10a688ed558285329d27ea994804a52bad9167d8e3a72bcb993f9699585d3ca25779ac64949ef422757a6c31102c12ab932e5cbe5cc92",
-  "devDependencies": {
-    "@types/lodash": "^4.17.15"
-  }
+	"name": "web-screen-recorder",
+	"version": "1.0.0",
+	"description": "",
+	"scripts": {},
+	"keywords": [],
+	"author": "",
+	"packageManager": "pnpm@10.6.2"
 }
