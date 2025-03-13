@@ -1,0 +1,6 @@
+packages:
+  # 테스트 환경 & 테스트 코드
+  - "test-environment"
+  - "test-playwright"
+  # 라이브러리
+  - "web-screen-recorder"
