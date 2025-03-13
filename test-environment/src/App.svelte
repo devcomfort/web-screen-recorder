@@ -147,7 +147,7 @@
     <button on:click={() => setInputRangeValueInto(MAX_VALUE)}
       >{MAX_VALUE}초로</button
     >
-    <button on:click={() => togglePlayback()}
+    <button on:click={() => togglePlayback()} id="play-and-pause-button"
       >{$playback ? "일시정지" : "재생"}</button
     >
   </div>
