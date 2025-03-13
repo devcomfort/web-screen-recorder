@@ -1,0 +1,16 @@
+{
+  // NOTE: fp-ts가 동작하지 않아서 추가한 설정
+  // 원래 import * as O from 'fp-ts/Option'; 형태로 호출해도 동작해야 하는데
+  // import * as O from 'fp-ts/lib/Option'; 형태로 직접 호출해야 동작하길래, 간접 동작으로도 호출 가능하도록 하려고 변경함.
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "fp-ts/*": ["node_modules/fp-ts/lib/*"]
+    },
+  },
+  "files": [],
+  "references": [
+    { "path": "./tsconfig.app.json" },
+    { "path": "./tsconfig.node.json" }
+  ]
+}
