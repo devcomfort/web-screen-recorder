@@ -7,7 +7,9 @@
 	"module": "./dist/index.js",
 	"types": "./dist/index.d.ts",
 	"scripts": {
-		"build": "pkgroll"
+		"lint": "tsc --noEmit",
+		"build": "pnpm lint && pkgroll",
+		"dev": "pkgroll --watch"
 	},
 	"dependencies": {
 		"@toss/assert": "^1.2.2",
