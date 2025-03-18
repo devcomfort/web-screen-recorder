@@ -1,7 +1,7 @@
 import type { EnhancedMediaRecorderOptions, MediaType } from "schemas";
 import { getDefaultMimeType, getMimeType } from "../getters";
-import { isString } from "lodash";
 import { assert } from "@toss/assert";
+import { isString } from "fp-ts/string";
 
 /**
  * 향상된 미디어 레코더 생성
