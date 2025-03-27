@@ -1,2 +1,2 @@
-export { createMediaRecorder } from "./create-media-recorder";
+export { MediaRecorder } from "./media-recorder";
 export { createMediaStream } from "./create-media-stream";

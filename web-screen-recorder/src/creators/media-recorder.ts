@@ -36,6 +36,7 @@ class MediaRecorder_ {
 	private recordedChunks: Blob[]; // 녹화된 미디어 청크 배열
 	private isRecording: boolean; // 현재 녹화 상태
 	private mediaRecorder: MediaRecorder; // 네이티브 MediaRecorder 인스턴스
+	private mediaStream: MediaStream;
 
 	/**
 	 * 미디어 레코더 인스턴스 생성
@@ -70,6 +71,7 @@ class MediaRecorder_ {
 		// 구성 정보 저장
 		this.mediaType = mediaType;
 		this.mimeType = mimeType;
+		this.mediaStream = mediaStream;
 
 		// 녹화 상태 초기화
 		this.recordedChunks = [];
@@ -297,6 +299,17 @@ class MediaRecorder_ {
 			},
 			(reason) => new Error(`녹화/녹음 중지 실패 (사유: ${reason})`),
 		);
+	}
+
+	/**
+	 * 녹화 스트리밍 중지
+	 *
+	 * 더 이상 영상 데이터를 청크 리스트에 적재하지 않습니다.
+	 */
+	async stopStream() {
+		for (const track of this.mediaStream.getTracks()) {
+			track.stop();
+		}
 	}
 
 	/**
