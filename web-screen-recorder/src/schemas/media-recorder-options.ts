@@ -7,6 +7,7 @@ export const MediaRecorderOptions_ = z
 		bitsPerSecond: z.number(),
 		mimeType: z.string(),
 		videoBitsPerSecond: z.number(),
+		fps: z.number().int().gt(0).describe("영상 녹화 시 프레임"),
 	})
 	.partial();
 
