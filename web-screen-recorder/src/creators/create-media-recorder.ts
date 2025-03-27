@@ -253,6 +253,9 @@ class MediaRecorder_ {
 		if (!this.isRecording)
 			return TE.left(new Error("이미 녹화가 활성화되어 있습니다"));
 
+		// 청크 내 데이터 초기화
+		this.flushChunks();
+
 		// 미디어 타입에 따른 녹화 시작
 		return match({
 			mediaType: this.mediaType,
