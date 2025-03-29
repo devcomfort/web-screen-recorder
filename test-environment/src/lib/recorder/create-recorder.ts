@@ -1,5 +1,5 @@
 import {
-	createMediaRecorder,
+	MediaRecorder,
 	createMediaStream,
 } from "@devcomfort/web-screen-recorder";
 
@@ -11,17 +11,17 @@ export async function createRecorder(duration: number, fps = 60) {
 			audio: true,
 		});
 
-		const recorder = createMediaRecorder(videoStream, {
+		const recorder = new MediaRecorder(videoStream, {
 			mediaType: "video",
 			codec: "h264",
-			// TODO: container 역할 이해하기, 필요하면 코드 수정하기 (DX 및 UX를 높여야함)
 			container: "webm",
+			fps,
 		});
 
-		recorder.startRecord(fps);
+		recorder.start();
 
 		setTimeout(async () => {
-			await recorder.stopRecord();
+			await recorder.stop();
 			recorder.saveFile("my-video.webm");
 			recorder.stopStream();
 		}, duration);
