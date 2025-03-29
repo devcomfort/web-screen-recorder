@@ -285,16 +285,16 @@ class MediaRecorder_ {
 	 * 미디어 녹화 중지
 	 *
 	 * @async
-	 * @returns {Promise<TE.TaskEither<Error, void>>} 녹화 중지 결과
+	 * @returns {Promise<E.Left<Error> | E.Right<void>>} 녹화 중지 결과
 	 */
-	async stop(): Promise<TE.TaskEither<Error, void>> {
+	async stop(): Promise<E.Left<Error> | E.Right<void>> {
 		// 이미 중지된 경우 오류 반환
 		if (this.isRecording)
-			return TE.left(new Error("이미 녹화가 중지되었습니다"));
+			return E.left(new Error("이미 녹화가 중지되었습니다"));
 
 		// 녹화 중지 시도
-		return TE.tryCatch(
-			async () => {
+		return E.tryCatch(
+			() => {
 				this.mediaRecorder.stop();
 			},
 			(reason) => new Error(`녹화/녹음 중지 실패 (사유: ${reason})`),
@@ -318,7 +318,7 @@ class MediaRecorder_ {
 	 * @async
 	 * @returns {Promise<E.Either<Error, void>>} 일시 정지 작업 결과
 	 */
-	async pause(): Promise<E.Either<Error, void>> {
+	pause(): E.Either<Error, void> {
 		// 이미 녹화 중이 아닌 경우 오류 반환
 		if (!this.isRecording)
 			return E.left(new Error("이미 일시 정지된 상태입니다"));
@@ -333,7 +333,7 @@ class MediaRecorder_ {
 	 * @async
 	 * @returns {Promise<E.Either<Error, void>>} 재개 작업 결과
 	 */
-	async resume(): Promise<E.Either<Error, void>> {
+	resume(): E.Either<Error, void> {
 		// 이미 녹화 중인 경우 오류 반환
 		if (this.isRecording) return E.left(new Error("이미 재생 중입니다"));
 		this.mediaRecorder.resume();
