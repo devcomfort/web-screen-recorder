@@ -1,4 +1,4 @@
-export { createMediaRecorder, createMediaStream } from "./creators";
+export { MediaRecorder, createMediaStream } from "./creators";
 export {
 	getDefaultMimeType,
 	getDisplayMedia,
