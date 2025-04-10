@@ -1,9 +1,11 @@
-import type { MediaFormat } from "schemas";
+import type { MIMEType } from "schemas";
 
 /**
- * 지원되는 미디어 형식 목록
+ * 라이브러리가 지원하는 미디어 형식 목록
+ * 
+ * @note 브라우저가 지원하는지 여부와는 무관함.
  */
-export const SUPPORTED_FORMATS: MediaFormat[] = [
+export const SYSTEM_SUPPORTED_FORMATS: MIMEType[] = [
 	// 비디오 형식
 	{
 		mediaType: "video",
