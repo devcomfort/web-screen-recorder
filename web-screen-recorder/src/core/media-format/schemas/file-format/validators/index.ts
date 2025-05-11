@@ -3,8 +3,8 @@
  *
  * @module file-format/validators
  *
- * @exports validateAudioFormat - 주어진 값이 `AudioFormat` 타입인지 검증합니다.
- * @exports validateVideoFormat - 주어진 값이 `VideoFormat` 타입인지 검증합니다.
+ * @exports validateAudioFileFormat - 주어진 값이 `AudioFileFormat` 타입인지 검증합니다.
+ * @exports validateVideoFileFormat - 주어진 값이 `VideoFileFormat` 타입인지 검증합니다.
  */
-export { validateAudioFormat } from "./audio-format";
-export { validateVideoFormat } from "./video-format";
+export { validateAudioFileFormat } from "./audio-file-format";
+export { validateVideoFileFormat } from "./video-file-format";

@@ -3,8 +3,8 @@
  *
  * @module file-format/schemas
  *
- * @exports AudioFormatSchema - 오디오 파일 형식을 나타내는 Zod enum 스키마입니다.
- * @exports VideoFormatSchema - 비디오 파일 형식을 나타내는 Zod enum 스키마입니다.
+ * @exports AudioFileFormatSchema - 오디오 파일 형식을 나타내는 Zod enum 스키마입니다.
+ * @exports VideoFileFormatSchema - 비디오 파일 형식을 나타내는 Zod enum 스키마입니다.
  */
-export { AudioFormatSchema } from "./audio-format";
-export { VideoFormatSchema } from "./video-format";
+export { AudioFileFormatSchema } from "./audio-file-format";
+export { VideoFileFormatSchema } from "./video-file-format";

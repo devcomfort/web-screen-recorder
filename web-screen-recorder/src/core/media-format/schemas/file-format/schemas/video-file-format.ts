@@ -12,7 +12,7 @@ import { z } from "zod";
  * - mkv: Matroska 파일 형식 (.mkv)
  * - m4v: MPEG-4 비디오 파일 형식 (.m4v)
  */
-export const VideoFormatSchema = z.enum([
+export const VideoFileFormatSchema = z.enum([
 	"webm",
 	"mp4",
 	"mov",
