@@ -12,5 +12,3 @@
 export { MIMETypeSchema } from "./schemas";
 export type { MIMEType } from "./types";
 export { validateMIMEType } from "./validators";
-
-export { toMIMETypeString } from "./to-mime-type-string";
