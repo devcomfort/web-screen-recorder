@@ -1,5 +1,8 @@
 import { z } from "zod";
-import { AudioFormatSchema, VideoFormatSchema } from "../../file-format";
+import {
+	AudioFileFormatSchema,
+	VideoFileFormatSchema,
+} from "../../file-format";
 
 /**
  * `MediaFormatSchema`는 오디오 및 비디오 파일 형식을 통합하여 정의하는 Zod 스키마입니다.
@@ -18,6 +21,6 @@ import { AudioFormatSchema, VideoFormatSchema } from "../../file-format";
  * 이 스키마는 `MediaFormat` 타입을 생성하는 데 사용되며, `validateMediaFormat` 함수를 통해 값의 유효성을 검증할 수 있습니다.
  */
 export const MediaFormatSchema = z.union([
-	AudioFormatSchema,
-	VideoFormatSchema,
+	AudioFileFormatSchema,
+	VideoFileFormatSchema,
 ]);

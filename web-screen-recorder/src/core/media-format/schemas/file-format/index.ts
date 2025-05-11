@@ -10,6 +10,6 @@
  * @exports validateAudioFormat - 주어진 값이 `AudioFormat` 타입인지 검증합니다.
  * @exports validateVideoFormat - 주어진 값이 `VideoFormat` 타입인지 검증합니다.
  */
-export { AudioFormatSchema, VideoFormatSchema } from "./schemas";
-export type { AudioFormat, VideoFormat } from "./types";
-export { validateAudioFormat, validateVideoFormat } from "./validators";
+export { AudioFileFormatSchema, VideoFileFormatSchema } from "./schemas";
+export type { AudioFileFormat, VideoFileFormat } from "./types";
+export { validateAudioFileFormat, validateVideoFileFormat } from "./validators";

@@ -34,12 +34,12 @@ export {
  * @exports validateVideoFormat - 주어진 값이 `VideoFormat` 타입인지 검증합니다.
  */
 export {
-	AudioFormatSchema,
-	VideoFormatSchema,
-	type AudioFormat,
-	type VideoFormat,
-	validateAudioFormat,
-	validateVideoFormat,
+	AudioFileFormatSchema,
+	VideoFileFormatSchema,
+	type AudioFileFormat,
+	type VideoFileFormat,
+	validateAudioFileFormat,
+	validateVideoFileFormat,
 } from "./file-format";
 
 /**
@@ -67,3 +67,28 @@ export {
 	type MIMEType,
 	validateMIMEType,
 } from "./mime-type";
+
+/**
+ * 미디어 형식 관련 기능
+ *
+ * @exports AudioFormatSchema - 오디오 파일 형식을 나타내는 Zod enum 스키마
+ * @exports VideoFormatSchema - 비디오 파일 형식을 나타내는 Zod enum 스키마
+ * @exports MediaFormatSchema - 미디어 형식을 나타내는 Zod enum 스키마
+ * @exports AudioFormat - 오디오 파일 형식을 나타내는 타입
+ * @exports VideoFormat - 비디오 파일 형식을 나타내는 타입
+ * @exports MediaFormat - 미디어 형식을 나타내는 타입
+ * @exports validateAudioFormat - 주어진 값이 `AudioFormat` 타입인지 검증합니다.
+ * @exports validateVideoFormat - 주어진 값이 `VideoFormat` 타입인지 검증합니다.
+ * @exports validateMediaFormat - 주어진 값이 `MediaFormat` 타입인지 검증합니다.
+ */
+export {
+	AudioFormatSchema,
+	VideoFormatSchema,
+	MediaFormatSchema,
+	type AudioFormat,
+	type VideoFormat,
+	type MediaFormat,
+	validateAudioFormat,
+	validateVideoFormat,
+	validateMediaFormat,
+} from "./media-format";

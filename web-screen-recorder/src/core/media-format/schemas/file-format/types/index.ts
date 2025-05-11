@@ -6,5 +6,5 @@
  * @exports AudioFormat - 오디오 파일 형식을 나타내는 타입입니다.
  * @exports VideoFormat - 비디오 파일 형식을 나타내는 타입입니다.
  */
-export type { AudioFormat } from "./audio-file-format";
-export type { VideoFormat } from "./video-file-format";
+export type { AudioFileFormat } from "./audio-file-format";
+export type { VideoFileFormat } from "./video-file-format";
